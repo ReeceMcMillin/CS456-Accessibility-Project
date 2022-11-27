@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 1.1rem;
+}
+
+#container {
+    margin: 0 auto;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    grid-template-rows: 0.5fr 2fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+        ". title ."
+        "goals game-grid instructions"
+        ". words-so-far ."
+}
+
+#title {
+    grid-area: title;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#instructions {
+    grid-area: instructions;
+}
+
+#instructions > h1 {
+    text-align: center;
+}
+
+#instructions > ol {
+    text-align: left;
+}
+
+#words-so-far {
+    grid-area: words-so-far;
+    font-size: 1.2rem;
+}
+
+#current-word {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#goals {
+    grid-area: goals;
+    margin: 0 1em;
+}
+
+#game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". top-row top-row top-row ."
+        "left-column line-zone line-zone line-zone right-column"
+        "left-column line-zone line-zone line-zone right-column"
+        "left-column line-zone line-zone line-zone right-column"
+        ". bottom-row bottom-row bottom-row .";
+    border: 5px solid purple;
+    grid-area: game-grid;
+}
+
+.line-zone {
+    grid-area: line-zone;
+}
+
+#top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "top-left top-center top-right"
+        "top-left top-center top-right"
+        "top-left top-center top-right";
+    grid-area: top-row;
+}
+
+#top-left {
+    grid-area: top-left;
+}
+
+#top-center {
+    grid-area: top-center;
+}
+
+#top-right {
+    grid-area: top-right;
+}
+
+#left-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "left-top left-top left-top"
+        "left-center left-center left-center"
+        "left-bottom left-bottom left-bottom";
+    grid-area: left-column;
+}
+
+#left-top {
+    grid-area: left-top;
+}
+
+#left-center {
+    grid-area: left-center;
+}
+
+#left-bottom {
+    grid-area: left-bottom;
+}
+
+#bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "bottom-left bottom-center bottom-right"
+        "bottom-left bottom-center bottom-right"
+        "bottom-left bottom-center bottom-right";
+    grid-area: bottom-row;
+}
+
+#bottom-left {
+    grid-area: bottom-left;
+}
+
+#bottom-center {
+    grid-area: bottom-center;
+}
+
+#bottom-right {
+    grid-area: bottom-right;
+}
+
+#right-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "right-top right-top right-top"
+        "right-center right-center right-center"
+        "right-bottom right-bottom right-bottom";
+    grid-area: right-column;
+}
+
+#right-top {
+    grid-area: right-top;
+}
+
+#right-center {
+    grid-area: right-center;
+}
+
+#right-bottom {
+    grid-area: right-bottom;
+}
+
+#game-grid .line-zone, .letter-container .letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    border: 1px dashed black;
+}
+
+.letter {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+code {
+    font-family: "DM Mono", monospace;
+}

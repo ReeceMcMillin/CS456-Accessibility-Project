@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <title>Letterbox'd</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="title" tabindex="0">
+            <h1>Letterbox'd</h1>
+            <p>
+                Try to solve the puzzle in 5 words!
+            </p>
+        </div>
+
+        <div id="instructions" tabindex="0">
+            <h1>Instructions</h1>
+            <ol>
+                <li>Use <code>TAB</code> to cycle between elements.</li>
+                <li>To select a letter, press <code>SPACE</code>.</li>
+                <li>To finish a word, press <code>ENTER</code>.</li>
+            </ol>
+        </div>
+
+        <div id="game-grid" tabindex="0">
+            <div class="line-zone">lines will go here</div>
+            <div class="letter-container" id="top-row" tabindex="0">
+                <div class="letter" id="top-left" tabindex="0">top-left</div>
+                <div class="letter" id="top-center" tabindex="0">top-center</div>
+                <div class="letter" id="top-right" tabindex="0">top-right</div>
+            </div>
+            <div class="letter-container" id="right-column" tabindex="0">
+                <div class="letter" id="right-top" tabindex="0">right-top</div>
+                <div class="letter" id="right-center" tabindex="0">right-center</div>
+                <div class="letter" id="right-bottom" tabindex="0">right-bottom</div>
+            </div>
+            <div class="letter-container" id="bottom-row" tabindex="0">
+                <div class="letter" id="bottom-left" tabindex="0">bottom-left</div>
+                <div class="letter" id="bottom-center" tabindex="0">bottom-center</div>
+                <div class="letter" id="bottom-right" tabindex="0">bottom-right</div>
+            </div>
+            <div class="letter-container" id="left-column" tabindex="0">
+                <div class="letter" id="left-top" tabindex="0">left-top</div>
+                <div class="letter" id="left-center" tabindex="0">left-center</div>
+                <div class="letter" id="left-bottom" tabindex="0">left-bottom</div>
+            </div>
+        </div>
+
+        <div id="goals" tabindex="0">
+            <h1>Goals</h1>
+            <p>The primary goal of this project is to port the New York Times game <em>Letter Boxed</em>
+                to a form more friendly to users with limited sight or visual processing issues.</p>
+            <ul>
+                <li>Screen reader accessibility</li>
+                <li>Easily-differentiable letters via the
+                    <a href="https://fonts.google.com/specimen/Atkinson+Hyperlegible" target="_blank">
+                        Atkinson Hyperlegible font.
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="words-so-far">
+            <div id="current-word"></div>
+            <ol id="word-list"></ol>
+        </div>
+    </div>
+    <script src = "main.js" type="module"></script>
+</body>
+
+</html>
