@@ -22,7 +22,17 @@ let current_word = "";
 // }
 
 letter_elements.forEach(e => {
+    //Also adds click responsiveness
+    e.addEventListener("click", event => {
+        console.log(`pressed ${e.textContent}`)
+        current_word = `${current_word}${e.textContent}`
+        // need to prevent user from selecting from the same set twice in a row
+        document.getElementById("current-word").textContent = current_word
+        console.log(`current_word = ${current_word}`)
+    }
+    )
     e.addEventListener("keyup", event => {
+        
         if (event.code === "Space") {
             console.log(`pressed ${e.textContent}`)
             current_word = `${current_word}${e.textContent}`
@@ -33,7 +43,7 @@ letter_elements.forEach(e => {
             if (current_word !== "") {
                 word_list = document.getElementById("word-list");
                 let new_word = document.createElement("li");
-                new_word.appendChild(document.createTextNode(current_word))            
+                new_word.appendChild(document.createTextNode(current_word))
                 word_list.appendChild(new_word)
                 current_word = "";
                 document.getElementById("current-word").textContent = current_word
