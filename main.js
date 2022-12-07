@@ -3,23 +3,22 @@ import { dictionary } from "./dictionary.js";
 const alphabet = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
 // random for now, but there's definitely a better way to generate if we get time.
-const cells = Array.from("ADFBCENOPJMI");
+const cells = Array.from("NLDAGBVCRIYU");
 
-const letter_elements = Array.from(document.getElementsByClassName("letter"));
+let letter_elements = Array.from(document.getElementsByClassName("letter"));
 
 for (let i = 0; i < 12; i++) {
     letter_elements[i].textContent = cells[i]
 }
 
-let last_selected_set = null;
+console.log(`${letter_elements}`)
+
+let last_selected_side = null;
 
 let words_so_far = [];
 
 let current_word = "";
 
-// selectLetterEvent = event => {
-
-// }
 
 letter_elements.forEach(e => {
     e.addEventListener("keyup", event => {
@@ -40,6 +39,19 @@ letter_elements.forEach(e => {
             }
         }
     });
-})
+});
+
+document.addEventListener("keydown", event => {
+    let letter = event.key.toUpperCase();
+    if (cells.includes(letter)) {
+        let element = letter_elements[cells.indexOf(letter)];
+        parent = element.closest("div.letter-container");
+        if (parent.id == last_selected_side) {
+            return
+        }
+        last_selected_side = parent.id;
+        element.classList.add("letter-used");
+    }
+});
 
 let word_list = document.getElementById("word-list");

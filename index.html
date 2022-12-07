@@ -12,7 +12,7 @@
 <body>
     <div id="container">
         <div id="title" tabindex="0">
-            <h1>Letterbox'd</h1>
+            <h1 aria-roledescription="Game title">Letterbox'd</h1>
             <p>
                 Try to solve the puzzle in 5 words!
             </p>
@@ -22,29 +22,29 @@
             <h1>Instructions</h1>
             <ol>
                 <li>Use <code>TAB</code> to cycle between elements.</li>
-                <li>To select a letter, press <code>SPACE</code>.</li>
+                <li>To select a letter, press the <code>SPACE</code>.</li>
                 <li>To finish a word, press <code>ENTER</code>.</li>
             </ol>
         </div>
 
-        <div id="game-grid" tabindex="0">
-            <div class="line-zone">lines will go here</div>
-            <div class="letter-container" id="top-row" tabindex="0">
+        <div id="game-grid" tabindex="0" aria-label="the game grid for letter boxed">
+            <div class="line-zone"></div>
+            <div class="letter-container" id="top-row" aria-label="top side" tabindex="0">
                 <div class="letter" id="top-left" tabindex="0">top-left</div>
                 <div class="letter" id="top-center" tabindex="0">top-center</div>
                 <div class="letter" id="top-right" tabindex="0">top-right</div>
             </div>
-            <div class="letter-container" id="right-column" tabindex="0">
+            <div class="letter-container" id="right-column" aria-label="right side" tabindex="0">
                 <div class="letter" id="right-top" tabindex="0">right-top</div>
                 <div class="letter" id="right-center" tabindex="0">right-center</div>
                 <div class="letter" id="right-bottom" tabindex="0">right-bottom</div>
             </div>
-            <div class="letter-container" id="bottom-row" tabindex="0">
+            <div class="letter-container" id="bottom-row" aria-label="bottom side" tabindex="0">
                 <div class="letter" id="bottom-left" tabindex="0">bottom-left</div>
                 <div class="letter" id="bottom-center" tabindex="0">bottom-center</div>
                 <div class="letter" id="bottom-right" tabindex="0">bottom-right</div>
             </div>
-            <div class="letter-container" id="left-column" tabindex="0">
+            <div class="letter-container" id="left-column" aria-label="left side" tabindex="0">
                 <div class="letter" id="left-top" tabindex="0">left-top</div>
                 <div class="letter" id="left-center" tabindex="0">left-center</div>
                 <div class="letter" id="left-bottom" tabindex="0">left-bottom</div>
@@ -70,7 +70,7 @@
             <ol id="word-list"></ol>
         </div>
     </div>
-    <script src = "main.js" type="module"></script>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
