@@ -24,6 +24,16 @@ letter_elements.forEach(e => {
     e.addEventListener("keyup", event => {
         if (event.code === "Space") {
             console.log(`pressed ${e.textContent}`)
+            let letter = e.textContent;
+            if (cells.includes(letter)) {
+                let element = letter_elements[cells.indexOf(letter)];
+                parent = element.closest("div.letter-container");
+                if (parent.id == last_selected_side) {
+                    return
+                }
+                last_selected_side = parent.id;
+                element.classList.add("letter-used");
+            }
             current_word = `${current_word}${e.textContent}`
             // need to prevent user from selecting from the same set twice in a row
             document.getElementById("current-word").textContent = current_word
@@ -40,6 +50,8 @@ letter_elements.forEach(e => {
         }
     });
 });
+
+cells.map(letter => letter.toLowerCase())
 
 document.addEventListener("keydown", event => {
     let letter = event.key.toUpperCase();
