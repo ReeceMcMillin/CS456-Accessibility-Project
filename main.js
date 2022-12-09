@@ -3,23 +3,21 @@ import { dictionary } from "./dictionary.js";
 const alphabet = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
 // random for now, but there's definitely a better way to generate if we get time.
-const cells = Array.from("ADFBCENOPJMI");
+const cells = Array.from("NLDAGBVCRIYU");
 
-const letter_elements = Array.from(document.getElementsByClassName("letter"));
+let letter_elements = Array.from(document.getElementsByClassName("letter"));
 
 for (let i = 0; i < 12; i++) {
     letter_elements[i].textContent = cells[i]
 }
 
-let last_selected_set = null;
+console.log(`${letter_elements}`)
+
+let last_selected_side = null;
 
 let words_so_far = [];
 
 let current_word = "";
-
-// selectLetterEvent = event => {
-
-// }
 
 letter_elements.forEach(e => {
     //Also adds click responsiveness
@@ -32,7 +30,6 @@ letter_elements.forEach(e => {
     }
     )
     e.addEventListener("keyup", event => {
-        
         if (event.code === "Space") {
             console.log(`pressed ${e.textContent}`)
             current_word = `${current_word}${e.textContent}`
@@ -40,16 +37,49 @@ letter_elements.forEach(e => {
             document.getElementById("current-word").textContent = current_word
             console.log(`current_word = ${current_word}`)
         } else if (event.code === "Enter") {
-            if (current_word !== "") {
+            // Makes sure the word is not blank or already inputted.
+            if (current_word !== "" && words_so_far.includes(current_word) != true) {
                 word_list = document.getElementById("word-list");
                 let new_word = document.createElement("li");
-                new_word.appendChild(document.createTextNode(current_word))
+                new_word.appendChild(document.createTextNode(current_word))            
                 word_list.appendChild(new_word)
+                words_so_far.push(current_word)
+                current_word = "";
+                document.getElementById("current-word").textContent = current_word
+            }
+            //Resets current word to blank if input was incorrect.
+            else{
                 current_word = "";
                 document.getElementById("current-word").textContent = current_word
             }
         }
     });
-})
+});
+
+document.addEventListener("keydown", event => {
+    let letter = event.key.toUpperCase();
+    if (cells.includes(letter)) {
+        let element = letter_elements[cells.indexOf(letter)];
+        parent = element.closest("div.letter-container");
+        if (parent.id == last_selected_side) {
+            return
+        }
+        last_selected_side = parent.id;
+        element.classList.add("letter-used");
+    }
+});
+
+document.addEventListener("click", event => {
+    let letter = event.key.toUpperCase();
+    if (cells.includes(letter)) {
+        let element = letter_elements[cells.indexOf(letter)];
+        parent = element.closest("div.letter-container");
+        if (parent.id == last_selected_side) {
+            return
+        }
+        last_selected_side = parent.id;
+        element.classList.add("letter-used");
+    }
+});
 
 let word_list = document.getElementById("word-list");
