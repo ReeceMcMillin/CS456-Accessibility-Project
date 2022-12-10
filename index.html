@@ -6,45 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css" />
-    <title>Letterbox'd</title>
+    <title>Letterboxed</title>
 </head>
 
 <body>
     <div id="container">
         <div id="title" tabindex="0">
-            <h1 aria-roledescription="Game title">Letterbox'd</h1>
+            <h1 aria-roledescription="Game title">Letterboxed</h1>
             <p>
                 Try to solve the puzzle in 5 words!
             </p>
         </div>
 
         <div id="instructions" tabindex="0">
-            <h1>Instructions</h1>
+            <header><h1 aria-role>Instructions</h1></header>
             <ol>
                 <li>Use <code>TAB</code> to cycle between elements.</li>
-                <li>To select a letter, press the <code>SPACE</code>.</li>
+                <li>
+                    To select a letter, you can use one of the following two options.
+                    <ul>
+                        <li>Press the <code>SPACE</code> key while the letter is selected.</li>
+                        <li>Press that letter on your keyboard.</li>
+                    </ul>
+                </li>
+                <li>You can't select two letters in a row from the same side.</li>
                 <li>To finish a word, press <code>ENTER</code>.</li>
             </ol>
         </div>
 
         <div id="game-grid" tabindex="0" aria-label="the game grid for letter boxed">
             <div class="line-zone"></div>
-            <div class="letter-container" id="top-row" aria-label="top side" tabindex="0">
+            <div class="letter-container" id="top-row" aria-label="top side containing letters N, L, D." tabindex="0">
                 <div class="letter" id="top-left" tabindex="0">top-left</div>
                 <div class="letter" id="top-center" tabindex="0">top-center</div>
                 <div class="letter" id="top-right" tabindex="0">top-right</div>
             </div>
-            <div class="letter-container" id="right-column" aria-label="right side" tabindex="0">
+            <div class="letter-container" id="right-column" aria-label="right side containing letters A, G, B." tabindex="0">
                 <div class="letter" id="right-top" tabindex="0">right-top</div>
                 <div class="letter" id="right-center" tabindex="0">right-center</div>
                 <div class="letter" id="right-bottom" tabindex="0">right-bottom</div>
             </div>
-            <div class="letter-container" id="bottom-row" aria-label="bottom side" tabindex="0">
+            <div class="letter-container" id="bottom-row" aria-label="bottom side containing letters V, C, R." tabindex="0">
                 <div class="letter" id="bottom-left" tabindex="0">bottom-left</div>
                 <div class="letter" id="bottom-center" tabindex="0">bottom-center</div>
                 <div class="letter" id="bottom-right" tabindex="0">bottom-right</div>
             </div>
-            <div class="letter-container" id="left-column" aria-label="left side" tabindex="0">
+            <div class="letter-container" id="left-column" aria-label="left side containing letters I, Y, U." tabindex="0">
                 <div class="letter" id="left-top" tabindex="0">left-top</div>
                 <div class="letter" id="left-center" tabindex="0">left-center</div>
                 <div class="letter" id="left-bottom" tabindex="0">left-bottom</div>
