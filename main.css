@@ -4,6 +4,8 @@ body {
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-size: 1.1rem;
     background-color: rgb(255, 255, 246);
+    /* optional blur to test against blurry vision */
+    /* filter: blur(5px); */
 }
 
 #container {
@@ -38,13 +40,15 @@ body {
 }
 
 #words-so-far {
+    max-height: 100px;
+    overflow: visible;
     grid-area: words-so-far;
     font-size: 1.5rem;
 }
 
 #current-word {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 h1 {
@@ -57,11 +61,13 @@ h1 {
 }
 
 #game-grid {
+    min-width: 480px;
+    min-height: 480px;
+    aspect-ratio: 1 / 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 10px 10px;
-    grid-auto-flow: row;
     grid-template-areas:
         ". top-row top-row top-row ."
         "left-column line-zone line-zone line-zone right-column"
@@ -80,7 +86,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px 10px;
-    grid-auto-flow: row;
+    /* grid-auto-flow: row; */
     grid-template-areas:
         "top-left top-center top-right"
         "top-left top-center top-right"
@@ -105,7 +111,7 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px 10px;
-    grid-auto-flow: row;
+    /* grid-auto-flow: row; */
     grid-template-areas:
         "left-top left-top left-top"
         "left-center left-center left-center"
@@ -130,7 +136,7 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px 10px;
-    grid-auto-flow: row;
+    /* grid-auto-flow: row; */
     grid-template-areas:
         "bottom-left bottom-center bottom-right"
         "bottom-left bottom-center bottom-right"
@@ -155,7 +161,7 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px 10px;
-    grid-auto-flow: row;
+    /* grid-auto-flow: row; */
     grid-template-areas:
         "right-top right-top right-top"
         "right-center right-center right-center"
@@ -185,7 +191,7 @@ h1 {
 
 .letter {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .letter-used {
